@@ -11,17 +11,27 @@ namespace WordCounter.Tests
         [TestMethod]
         public void RecognizeWord_String_True()
         {
-
-        RepeatCounter newWord = new RepeatCounter("hello","hello there friend");
-        Assert.AreEqual("hello", newWord.GetWord());
+            RepeatCounter newWord = new RepeatCounter("hello","hello there friend");
+            Assert.AreEqual("hello", newWord.GetWord());
         }
 
         [TestMethod]
         public void RecognizeSentence_String()
         {
+            RepeatCounter newSentence = new RepeatCounter("hello","hello there friend");
+            Assert.AreEqual("hello there friend", newSentence.GetSentence());
+        }
 
-        RepeatCounter newSentence = new RepeatCounter("hello","hello there friend");
-        Assert.AreEqual("hello there friend", newSentence.GetSentence());
+        [TestMethod]
+        public void CompareSententceAndWord_String()
+        {
+
+            RepeatCounter newCounterTest = new RepeatCounter("hello", "hello there friend");
+
+
+            CollectionAssert.AreEqual(1, newCounterTest.GetInstance().CountWords());
+
+            // Console.WriteLine(_instance.ToString());
         }
     }
 }
