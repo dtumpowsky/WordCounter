@@ -27,9 +27,9 @@ namespace WordCounter.Tests
         {
 
             RepeatCounter newCounterTest = new RepeatCounter("hello", "hello there friend");
+            newCounterTest.CountWords();
 
-
-            CollectionAssert.AreEqual(1, newCounterTest.GetInstance().CountWords());
+            Assert.AreEqual(1, newCounterTest.GetInstance());
 
             // Console.WriteLine(_instance.ToString());
         }
